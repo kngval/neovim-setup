@@ -40,7 +40,7 @@ return {
         capabilities = capabilities,
       })
       lspconfig.omnisharp.setup({
-        cmd = {"dotnet","/home/kngval/omnisharp/OmniSharp.dll" },
+        cmd = {"OmniSharp"},
         filetypes = {"cs","vb","xaml","axaml"},
         capabilities = capabilities,
         --	root_dir = lspconfig.util.root_pattern(".csproj", ".sln"),

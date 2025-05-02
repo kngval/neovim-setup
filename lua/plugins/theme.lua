@@ -1,32 +1,40 @@
 return {
-   "tiagovla/tokyodark.nvim",
-    opts = {
-        -- custom options here
-    },
-    config = function()
-        require("tokyodark").setup({
+  "Shatur/neovim-ayu",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("ayu").setup({
+      mirage = false,              -- Set to true for Ayu Mirage, false for Ayu Dark
+      overrides = {}               -- Add any color overrides here
+    })
+    vim.cmd("colorscheme ayu")     -- Apply the theme
+  end,
 
-     transparent_background = false, -- set background to transparent
-    gamma = 1.00, -- adjust the brightness of the theme
-    styles = {
-        comments = { italic = true }, -- style for comments
-        keywords = { italic = false }, -- style for keywords
-        identifiers = { italic = true }, -- style for identifiers
-        functions = {}, -- style for functions
-        variables = {}, -- style for variables
-    },
-    custom_highlights = {} or function(highlights, palette) return {} end, -- extend highlights
-    custom_palette = {} or function(palette) return {} end, -- extend palette
-    terminal_colors = true, -- enable terminal colors
-    }) -- calling setup is optional
+  -- "tiagovla/tokyodark.nvim",
+  --  opts = {
+  --      -- custom options here
+  --  },
+  --  config = function()
+  --      require("tokyodark").setup({
+  --
+  --   transparent_background = false, -- set background to transparent
+  --  gamma = 1.00, -- adjust the brightness of the theme
+  --  styles = {
+  --      comments = { italic = true }, -- style for comments
+  --      keywords = { italic = false }, -- style for keywords
+  --      identifiers = { italic = true }, -- style for identifiers
+  --      functions = {}, -- style for functions
+  --      variables = {}, -- style for variables
+  --  },
+  --  custom_highlights = {} or function(highlights, palette) return {} end, -- extend highlights
+  --  custom_palette = {} or function(palette) return {} end, -- extend palette
+  --  terminal_colors = true, -- enable terminal colors
+  --  }) -- calling setup is optional
+  --
+  --      vim.cmd [[colorscheme tokyodark]]
+  --  end,
 
-        vim.cmd [[colorscheme tokyodark]]
-    end,
-  -- "nyoom-engineering/oxocarbon.nvim",
-  -- config = function()
-  --   vim.opt.background = "dark" -- set this to dark or light
-  --   vim.cmd("colorscheme oxocarbon")
-  -- end
+
   -- 'dasupradyumna/midnight.nvim',
   --   lazy = false,
   --   priority = 1000,
@@ -44,9 +52,10 @@ return {
   --     },
   -- }
   --     vim.cmd("colorscheme midnight")
+  --
+  --   vim.cmd("highlight Normal guibg=#000000")
   --   end
 
-  -- lua/plugins/rose-pine.lua
   -- 	"rose-pine/neovim",
   -- 	name = "rose-pine",
   -- 	config = function()
@@ -253,7 +262,6 @@ return {
   --   " highlight clear LineNr
   --   " highlight clear CursorLineNr
   -- ]])
-  --
   --   end
 
   -- "oxfist/night-owl.nvim",
