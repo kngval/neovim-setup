@@ -1,14 +1,22 @@
 return {
-  "Shatur/neovim-ayu",
-  lazy = false,
-  priority = 1000,
+ "navarasu/onedark.nvim",
+  priority = 1000, -- make sure to load this before all the other start plugins
   config = function()
-    require("ayu").setup({
-      mirage = false,              -- Set to true for Ayu Mirage, false for Ayu Dark
-      overrides = {}               -- Add any color overrides here
-    })
-    vim.cmd("colorscheme ayu")     -- Apply the theme
-  end,
+    require('onedark').setup {
+      style = 'deep'
+    }
+    require('onedark').load()
+  end
+  -- "Shatur/neovim-ayu",
+  -- lazy = false,
+  -- priority = 1000,
+  -- config = function()
+  --   require("ayu").setup({
+  --     mirage = false,              -- Set to true for Ayu Mirage, false for Ayu Dark
+  --     overrides = {}               -- Add any color overrides here
+  --   })
+  --   vim.cmd("colorscheme ayu")     -- Apply the theme
+  -- end,
 
   -- "tiagovla/tokyodark.nvim",
   --  opts = {
